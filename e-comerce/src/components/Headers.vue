@@ -81,7 +81,8 @@ export default {
       }
     },
     home(){
-      router.push({name : 'Home'})
+     router.push({name : 'Home'})
+      
     },
 
     searchCategory(id){
@@ -90,7 +91,12 @@ export default {
     },
 
     tohistory(){
+      if(token){
       router.push({name : 'History'})
+      }else {
+        alert('you have to login first')
+          router.push({name : 'Login'})        
+      }
     }
   }
 }

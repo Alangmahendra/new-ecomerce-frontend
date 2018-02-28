@@ -6,6 +6,7 @@ import Search from '@/components/searchbycategory'
 import Adminpage from '@/components/Adminpage'
 import Update from "@/components/update";
 import CheckHistory from "@/components/CheckoutHistory";
+import nav from './nav'
 
 Vue.use(Router)
 
@@ -20,12 +21,14 @@ export default new Router({
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      beforeEnter: nav.globalNav
     },
     {
       path: '/admin',
       name: 'Adminpage',
-      component: Adminpage
+      component: Adminpage,
+      beforeEnter: nav.authNav
     },
     {
       path: '/category/:id',
@@ -35,12 +38,14 @@ export default new Router({
     {
       path: '/update/:id',
       name: 'Update',
-      component: Update
+      component: Update,
+      beforeEnter: nav.authNav
     },
     {
       path:'/myshoppinghistory',
       name:'History',
-      component: CheckHistory
+      component: CheckHistory,
+      beforeEnter: nav.authNav
     }
   ]
 })

@@ -12,7 +12,7 @@
 <script>
 import router from '@/router'
 import axios from 'axios'
-let baseUrl = `http://localhost:3000/api`
+let baseUrl = `http://neoal.xyz:3009/api`
 export default {
   name : 'Login',
   data(){

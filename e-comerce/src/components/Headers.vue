@@ -32,7 +32,7 @@ import {mapActions,mapState,mapMutations} from 'vuex'
 import router from '@/router'
 let token = localStorage.getItem('token')
 let admin = localStorage.getItem('admin')
-let baseUrl = `http://localhost:3000/api`
+let baseUrl = `http://localhost:3009/api`
 import axios from 'axios'
 export default {
   data(){
@@ -81,8 +81,7 @@ export default {
       }
     },
     home(){
-     router.push({name : 'Home'})
-      
+      router.push({name : 'Home'})
     },
 
     searchCategory(id){
@@ -91,12 +90,12 @@ export default {
     },
 
     tohistory(){
-      if(token){
-      router.push({name : 'History'})
-      }else {
-        alert('you have to login first')
-          router.push({name : 'Login'})        
-      }
+      if(!token){
+        alert('login first')
+        router.push({name : 'Login'})
+      } else {
+        router.push({name : 'History'})
+        }
     }
   }
 }

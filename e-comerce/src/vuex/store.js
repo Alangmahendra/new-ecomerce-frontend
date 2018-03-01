@@ -5,7 +5,7 @@ import { start } from 'repl';
 
 const token = localStorage.getItem('token')
 const http = axios.create({
-  baseURL:`http://localhost:3000/api`
+  baseURL:`http://neoal.xyz:3009/api`
 })
 
 Vue.use(Vuex)

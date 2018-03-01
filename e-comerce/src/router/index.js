@@ -16,36 +16,37 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      
     },
     {
       path: '/login',
       name: 'Login',
       component: Login,
-      beforeEnter: nav.globalNav
+      beforeEnter:nav.globalNav
     },
     {
       path: '/admin',
       name: 'Adminpage',
       component: Adminpage,
-      beforeEnter: nav.authNav
+      beforeEnter:nav.authNav
     },
     {
       path: '/category/:id',
       name: 'Search',
-      component: Search
+      component: Search,
     },
     {
       path: '/update/:id',
       name: 'Update',
       component: Update,
-      beforeEnter: nav.authNav
+      beforeEnter:nav.authNav
     },
     {
       path:'/myshoppinghistory',
       name:'History',
       component: CheckHistory,
-      beforeEnter: nav.authNav
+      beforeEnter:nav.authNav
     }
   ]
 })
